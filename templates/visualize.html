@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Datos</title>
+    <style>
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visualización de Datos</h1>
+    <div class="container">
+        <h2>Cantidad total vendida por producto</h2>
+        <img src="data:image/png;base64,{{ plot_url1 }}" alt="Gráfico de Barras">
+
+        <h2>Relación entre el precio unitario y la cantidad vendida</h2>
+        <img src="data:image/png;base64,{{ plot_url2 }}" alt="Gráfico de Dispersión">
+
+        <h2>Variación de la demanda a lo largo del tiempo</h2>
+        <img src="data:image/png;base64,{{ plot_url3 }}" alt="Gráfico de Dispersión con Líneas">
+    </div>
+</body>
+</html>
