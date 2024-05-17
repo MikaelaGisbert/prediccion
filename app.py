@@ -88,6 +88,29 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     prediction = None
+    products = []
+
+    # Obtener los productos únicos de la base de datos
+    conexion = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="prediccion"
+    )
+    cursor = conexion.cursor()
+    consulta = "SELECT DISTINCT ProductId, NameProduct FROM preddic"
+    cursor.execute(consulta)
+    productos = cursor.fetchall()
+    cursor.close()
+    conexion.close()
+
+    for producto in productos:
+        products.append({
+            "id": producto[0],
+            "name": producto[1],
+            "image": f"{producto[1].replace(' ', '').lower()}.jpg"  # Suponiendo que los nombres de los archivos de imagen están en minúsculas y sin espacios
+        })
+
     if request.method == 'POST':
         product_id = int(request.form['product_id'])
         days_ahead = int(request.form['days_ahead'])
@@ -106,8 +129,9 @@ def predict():
         predictions = load_and_predict('modelo.keras', X_new, scaler_X, scaler_y)
         predicted_quantity = predictions[0][0]
 
-        return render_template('predict.html', prediction=predicted_quantity, product_id=product_id, days_ahead=days_ahead)
-    return render_template('predict.html')
+        return render_template('predict.html', prediction=predicted_quantity, product_id=product_id, days_ahead=days_ahead, products=products)
+    return render_template('predict.html', products=products)
+
 
 @app.route('/visualize', methods=['GET'])
 def visualize():
