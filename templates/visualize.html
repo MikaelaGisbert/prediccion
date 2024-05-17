@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='visualize.css') }}">
+    <title>Visualización de Datos</title>
+</head>
+<body>
+    <div class="ContenedorV">
+        <h1 class="title">Visualización de Datos</h1>
+        <div class="container">
+            <img src="data:image/png;base64,{{ plot_url1 }}" alt="Gráfico de Barras">
+
+            <img src="data:image/png;base64,{{ plot_url2 }}" alt="Gráfico de Dispersión">
+
+            <img src="data:image/png;base64,{{ plot_url3 }}" alt="Gráfico de Dispersión con Líneas">
+        </div>
+    </div>
+</body>
+</html>

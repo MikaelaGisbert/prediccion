@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Página Principal</title>
 </head>
 <body>
-    <h1>Análisis de Datos y Red Neuronal</h1>
-    <form action="/result" method="POST">
-        <label for="product">Selecciona un producto:</label>
-        <select name="product" id="product">
-            {% for product_id, product_name in products %}
-                <option value="{{ product_id }}">{{ product_name }}</option>
-            {% endfor %}
-        </select>
-        <button type="submit">Ver Resultados</button>
-    </form>
+    <div class="ContenedorPrincipal">
+        <h1 class="Titulo">Sistema de predicción de demanda de productos de un supermercado</h1>
+        <div class="ContenedorBotones">
+            <button class="boton" onclick="location.href='/predict'">Predecir Demanda</button>
+            <button class="boton" onclick="location.href='/visualize'">Visualizar Datos</button>
+        </div>
+    </div>
 </body>
 </html>
