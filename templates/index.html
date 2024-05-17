@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <title>Página Principal</title>
 </head>
 <body>
-    <h1>Bienvenido</h1>
-    <button onclick="location.href='/predict'">Predecir Demanda</button>
-    <button onclick="location.href='/visualize'">Visualizar Datos</button>
+    <div class="ContenedorPrincipal">
+        <h1 class="Titulo">Sistema de predicción de demanda de productos de un supermercado</h1>
+        <div class="ContenedorBotones">
+            <button class="boton" onclick="location.href='/predict'">Predecir Demanda</button>
+            <button class="boton" onclick="location.href='/visualize'">Visualizar Datos</button>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,35 @@
+body {
+    background-image: url('https://img.freepik.com/fotos-premium/piso-madera-supermercado-desenfoque-fondo-pantalla-producto_36078-360.jpg');
+    background-size: cover;
+    background-position: center; 
+    margin: 10px;
+}
+
+
+/* .ContenedorV{
+    width: 1200px;
+    height: 100px;
+    background-color: rgba(34, 32, 34, 0.873);
+} */
+img {
+    display: block;
+    margin: 0 auto;
+}
+.container {
+    text-align: center;
+}
+
+.title{
+    color: rgb(6, 6, 6);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-family:sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+
+}
+
+

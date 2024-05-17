@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='predict.css') }}">
     <title>Predicción de Demanda</title>
 </head>
 <body>
-    <h1>Predicción de Demanda</h1>
-    <form method="POST">
-        <label for="product_id">ID del Producto:</label>
-        <input type="number" id="product_id" name="product_id" required>
-        <br>
-        <label for="days_ahead">Días hacia el futuro:</label>
-        <input type="number" id="days_ahead" name="days_ahead" required>
-        <br>
-        <button type="submit">Predecir Demanda</button>
-    </form>
-
-    {% if prediction is not none %}
-        <h2>Resultado de la Predicción</h2>
-        <p>La demanda predicha para el producto {{ product_id }} en {{ days_ahead }} días es {{ prediction }} unidades.</p>
-    {% endif %}
+    <div class="ContenedorP">
+        <h1 class="Titulo">Predicción de Demanda</h1>
+        <form method="POST">
+            <label class="label" for="product_id">ID del Producto:</label>
+            <input type="number" id="product_id" name="product_id" required>
+            <br>
+            <label class="label" for="days_ahead">Días hacia el futuro:</label>
+            <input type="number" id="days_ahead" name="days_ahead" required>
+            <br>
+            <button class = "boton" type="submit">Predecir Demanda</button>
+        </form>
+    </div>
+    <br/>
+    <div class="ContenedorR">
+        {% if prediction is not none %}
+            <h2 class ="Titulo2">Resultado de la Predicción</h2>
+            <p class=>La demanda predicha para el producto {{ product_id }} en {{ days_ahead }} días es {{ prediction }} unidades.</p>
+        {% endif %}
+    </div>
 </body>
 </html>
